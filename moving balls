@@ -1,0 +1,112 @@
+function setup() {
+  createCanvas(400, 400);
+}
+  
+var ball=0;
+var ballspeed=10;
+var ballchangeX=ballspeed;
+
+var ball2=100;
+var ballspeed2=15;
+var ballchangeX2=ballspeed2;
+
+var ball3=200;
+var ballspeed3=20;
+var ballchangeX3=ballspeed3;
+
+var ball4=300;
+var ballspeed4=22;
+var ballchangeX4=ballspeed4;
+
+var ballx=0
+var bally=0
+var ballmovingx=3
+var ballmovingy=4
+
+function draw() {
+  background(250);
+  noStroke();
+  
+  
+  fill(250,200,0);
+  ellipse(width/2,ball,100);
+  
+  fill(250,150,50);
+  ellipse(width/4,ball2,75);
+  
+  fill(250,200,150);
+  ellipse(width-80,ball3,80);
+  
+  fill(153,153,255);
+  ellipse(ballx,bally,100);
+  
+  fill(250,255,0)
+  ellipse(width/5,ball4,100);
+ 
+  ball=ball+ballchangeX;
+  ball2=ball2+ballchangeX2;
+  ball3=ball3+ballchangeX3;
+  ball4=ball4+ballchangeX4;
+  ballx=ballx+ballmovingx;
+  bally=bally+ballmovingy;
+  
+  //check if ball is of right hand side of screen
+  if(ball>=width){
+    //ball=0;
+    ballchangeX= -ballspeed;
+  }
+  //check if ball is of left hand side of screen
+  if(ball<=0){
+    ballchangeX= ballspeed;
+  }
+
+  
+  //check if ball is of right hand side of screen
+  if(ball2>=width){
+    ballchangeX2=-ballspeed2;
+  }
+  //check if ball is of left hand side of screen
+  if(ball2<=0){
+    ballchangeX2=ballspeed2;
+  }
+  
+  
+  //check if ball is of right hand side of screen
+  if(ball3>=width){
+//    ball=0;
+    ballchangeX3=-ballspeed3;
+  }
+  //check if ball is of left hand side of screen
+  if(ball3<=0){
+    ballchangeX3=ballspeed3;
+  }
+  
+  
+  //check if ball is of right hand side of screen
+  if(ball4>=width){
+//    ball=0;
+    ballchangeX4=-ballspeed4;
+  }
+  //check if ball is of left hand side of screen
+  if(ball4<=0){
+    ballchangeX4=ballspeed4;
+  }
+  
+  
+  //check if ball x is of right hand side of screen
+   if(ballx>=width){
+    ballmovingx=-random(2,20);
+  }
+  //check if ball x is of left hand side of screen
+  if(ballx<=0){
+    ballmovingx=random(3,20);
+  }
+  //check if ball y is of right hand side of screen  
+  if (bally>=height){
+    ballmovingy=-random(5,20);
+  }
+  //check if ball y is of left hand side of screen
+  if (bally<=0){
+    ballmovingy=random(5,20);
+  }
+}
