@@ -1,0 +1,48 @@
+function setup() {
+  createCanvas(300, 400);
+}
+
+function draw() {
+  var lineX1 =50;
+  var lineX2 =100;
+  var lineX3 =200;
+  var lineX4 =270;
+  var lineY1 =100;
+  var lineY2 =190;
+  var lineY3 =320;
+  var lineY4 =360;
+  var lineY5 =250
+  
+  background(255);
+  noStroke();
+  strokeCap(SQUARE);
+  
+  fill(255,255,0);//top yellow
+  rect(0,0,lineX1,lineY1);// yellow rectangle
+  
+  fill(220,0,0);//middle red
+  rect(lineX1,lineY1,width-lineX1,lineY2-lineY1);//red rectangle
+  
+  fill(0,120,255);// bottom blue
+  rect(0,lineY3,lineX1,height-lineY3);///blue rectangle
+  
+  fill(0);//bottom black
+  rect(lineX1,lineY4,lineX1,lineY1);// black rectangle
+  
+  fill(255,255,0);//bottom yellow
+  rect(lineX3,lineY3,width-lineX3,lineY4-lineY3);// yellow rectangle
+  
+  stroke(0);//draw black
+  strokeWeight(10);
+  line(lineX1,0,lineX1,height);//left vertical line 1
+  line(lineX2,lineY1,lineX2,height);//left vertical line 2
+  line(lineX3,0,lineX3,lineY4);// vertical line 3
+  line(lineX4,0,lineX4,lineY1);//vertical line 4
+ 
+  strokeWeight(10); 
+  line(0,lineY1,width,lineY1);  // horizonal line1
+  line(0,lineY2,width,lineY2);  // horizonal line2
+  line(lineX2,lineY5,width,lineY5);//horizonal line3
+  line(0,lineY3,width,lineY3);// horizonal line4
+  line(lineX1,lineY4,width,lineY4); // horizonal line5
+}
